@@ -32,7 +32,7 @@ După instalarea bibliotecii LaServici, includeți `Laravel\Authsocial\AuthSocia
        ......
     // Application Service Providers...
        ......
-       Laravel\Authsocial\AuthSocialServiceProvider::class,
+       Laservici\Authsocial\AuthSocialServiceProvider::class,
 ],
 ```
 
@@ -42,7 +42,7 @@ De asemenea, adăugați fragmentul `AuthSocial` in interiorul grupului `aliases`
 'aliases' => [
     //  Class Aliases...
       .....
-     'AuthSocial' => Laravel\Authsocial\Facades\AuthSocial::class,
+     'AuthSocial' => Laservici\Authsocial\Facades\AuthSocial::class,
 ```
 
 De asemenea, va trebui să adăugați acreditări pentru serviciile OAuth pe care aplicația dvs. le utilizează. Aceste acreditări ar trebui plasate în fișierul de configurare `config/services.php` și ar trebui să utilizeze cheia `facebook`,` twitter`, `linkedin`,` google`, `github` sau` bitbucket`, solicitată în funcție de cererea furnizorilor.
@@ -110,7 +110,7 @@ Desigur, va trebui să definiți rute pentru metodele `controller methods`:
 Un număr de furnizori OAuth acceptă parametrii opționali în cererea de redirecționare. Pentru a include toți parametrii opționali în cerere, apelați metoda `with` cu o matrice asociativă:
 
 ```php
-  return Authsocial::driver('google')
+  return Authsocial::driver('github')
             ->with(['hd' => 'example.com'])->redirect();
 ```
 
@@ -121,7 +121,7 @@ Atunci când utilizați metoda `with`, aveți grijă să nu transmiteți cuvinte
 Metoda `stateless` poate fi utilizată pentru a dezactiva verificarea stării sesiunii. Acest lucru este util atunci când adăugați autentificarea socială la un API:
 
 ```php
-  return Authsocial::driver('google')->stateless()->user();
+  return Authsocial::driver('github')->stateless()->user();
 ```
 
 
