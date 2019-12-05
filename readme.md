@@ -25,7 +25,7 @@ Pentru a începe cu AuthSocial, utilizați Composer pentru a adăuga pachetul de
 
 ### Configurare
 
-După instalarea bibliotecii LaServici, includeți `Laravel\Authsocial\AuthSocialServiceProvider` în interiorul grupului `providers` din fișierul de configurare `config/app.php`:
+După instalarea bibliotecii LaServici, includeți `Laservici\Authsocial\AuthSocialServiceProvider` în interiorul grupului `providers` din fișierul de configurare `config/app.php`:
 
 ```php
 'providers' => [
